@@ -1,5 +1,7 @@
 package cn.darkmatter.stream.dao;
 
+import cn.darkmatter.stream.model.Post;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,4 +16,6 @@ public class PostEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     public final Long id;
+
+    public Post.PostType postType;
 }
