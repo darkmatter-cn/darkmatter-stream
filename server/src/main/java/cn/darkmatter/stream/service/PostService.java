@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PostService {
-    public Post newPost() {
+    public Post newPost(Post.PostType postType) {
         PostEntity postEntity = new PostEntity();
+        postEntity.postType = postType;
         postEntity = postRepository.save(postEntity);
         Post post = new Post();
         post.id = postEntity.id;
+        post.postType = postEntity.postType;
         return post;
     }
 
